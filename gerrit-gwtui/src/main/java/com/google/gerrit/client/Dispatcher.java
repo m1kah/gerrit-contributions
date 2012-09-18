@@ -66,6 +66,7 @@ import com.google.gerrit.client.changes.CustomDashboardScreen;
 import com.google.gerrit.client.changes.PatchTable;
 import com.google.gerrit.client.changes.PublishCommentScreen;
 import com.google.gerrit.client.changes.QueryScreen;
+import com.google.gerrit.client.patches.AllPatchesScreen;
 import com.google.gerrit.client.patches.PatchScreen;
 import com.google.gerrit.client.rpc.GerritCallback;
 import com.google.gerrit.client.ui.Screen;
@@ -509,6 +510,8 @@ public class Dispatcher {
                 top, //
                 baseId //
             );
+          } else if ("all".equals(panel)) {
+            return new AllPatchesScreen(id.getParentKey(), baseId, patchSetDetail, patchTable);
           }
         }
 
